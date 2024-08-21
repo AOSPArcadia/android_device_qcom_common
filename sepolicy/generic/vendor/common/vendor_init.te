@@ -8,4 +8,4 @@ set_prop(vendor_init, vendor_modprobe_prop)
 set_prop(vendor_init, vendor_persist_rcs_qti_prop)
 
 # Allow changing swap settings
-allow vendor_init vendor_proc_swappiness:file rw_file_perms;
+# allow vendor_init vendor_proc_swappiness:file rw_file_perms;
