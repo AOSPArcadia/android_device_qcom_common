@@ -167,6 +167,13 @@ PRODUCT_PACKAGES += \
     qspa_system.rc \
     qspa_default.rc
 
+# Thermal
+ifeq ($(shell expr $(TARGET_KERNEL_VERSION) \<= 5.4), 1)
+    $(call soong_config_set,qti_thermal,netlink,false)
+else
+    $(call soong_config_set,qti_thermal,netlink,true)
+endif
+
 # usbudev service for usb ip assigment
 PRODUCT_PACKAGES += \
     usbudev
